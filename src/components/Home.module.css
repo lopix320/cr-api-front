@@ -1,0 +1,12 @@
+.home{
+  /* background-color: aqua; */
+  /* height: 35.5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto{
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
