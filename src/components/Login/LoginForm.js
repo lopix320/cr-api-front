@@ -5,18 +5,23 @@ import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 
 const LoginForm = () => {
-  const username = useForm('email');
+  const username = useForm();
   const password = useForm();
   // console.log(password.value);
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (username.validate() && password.validate()) {
-      console.log('deu bom');
-    } else {
-      console.log('deu ruim');
-    }
-    console.log({ usuario: username.value, senha: password.value });
+    fetch('http://localhost:8887/user/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify( {password, username} ),
+    })
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .then((json) => {
+      });
   }
   return (
     <div className="container">
